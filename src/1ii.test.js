@@ -15,6 +15,6 @@ const input = `1000
 
 10000`;
 
-it("example", () => {
+it("1ii", () => {
   solver(input).should.equal(45000);
 });
