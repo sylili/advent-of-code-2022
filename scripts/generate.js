@@ -30,7 +30,9 @@ const generate = async () => {
 
   prompt("🎄 Example output:");
   const exampleOutputString = clipBoard.readSync();
-  const exampleOutput = validateNumber(exampleOutputString, "Example output");
+  const exampleOutput = isNaN(exampleOutputString)
+    ? `'${exampleOutputString}'`
+    : +exampleOutputString;
 
   prompt("🎄 Your input: ");
   const yourInput = clipBoard.readSync().replace(/[`$\\]/g, (c) => "\\" + c);
