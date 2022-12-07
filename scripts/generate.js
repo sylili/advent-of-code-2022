@@ -26,7 +26,7 @@ const generate = async () => {
   console.log("Copy the following to the clipboard and press ENTER: ");
 
   prompt("🎄 Example input: ");
-  const exampleInput = clipBoard.readSync().replace(/[`$\\]/g, (c) => "\\" + c);
+  const exampleInput = clipBoard.readSync().replace(/[`\\]/g, (c) => "\\" + c);
 
   prompt("🎄 Example output:");
   const exampleOutputString = clipBoard.readSync();
@@ -35,7 +35,7 @@ const generate = async () => {
     : +exampleOutputString;
 
   prompt("🎄 Your input: ");
-  const yourInput = clipBoard.readSync().replace(/[`$\\]/g, (c) => "\\" + c);
+  const yourInput = clipBoard.readSync().replace(/[`\\]/g, (c) => "\\" + c);
 
   finaliseGenerator(day, exampleInput, exampleOutput, yourInput);
 
